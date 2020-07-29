@@ -251,9 +251,8 @@ Token check_rectangle(const std::string& s)
 				return std::string("Wrong number of parameters for shape identifier R\n");
 		}
 
-		if (args[0] == args[2] || args[1] == args[3])             //if <left-x-coord> == <right-x-coord> or <top-y-coord> == <bottom-y-coord>
+		if (args[0] >= args[2] || args[1] >= args[3])             //if <left-x-coord> <= <right-x-coord> or <top-y-coord> <= <bottom-y-coord>
 			return std::string("Unrecognized shape identifier\n");
-
 
 		if (ss >> temp)
 			return std::string("Wrong number of parameters for shape identifier R\n");
